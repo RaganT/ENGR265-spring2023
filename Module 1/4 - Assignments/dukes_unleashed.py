@@ -8,8 +8,15 @@ Note: this problem does not require the "compounding interest" formula from the 
 
 """
 
-### Your code here ###
+# in-state total cost, including tuition and room/board costs $30,792
+in_state_gift = 30,792
 
-in_state_gift = 0
+# out-of-state total cost, including tuition and room/board costs $47,882
+out_state_gift = 47,882
 
-out_state_gift = 0
+# if an alumni wanted to just sponsor an in-state student, they would need enough money in their account
+# so that their investment yields the total cost for the students, in this case $30,792
+test_run = 1000000 * .05
+total = (test_run + 1000000)
+print(test_run)
+print(total)

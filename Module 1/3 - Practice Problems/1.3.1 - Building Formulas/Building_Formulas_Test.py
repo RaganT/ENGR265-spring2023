@@ -1,6 +1,8 @@
 # tests the final balance of the account after interest
 # this unittest would be identical to the one used by math package
 import unittest
+import Building_Formulas
+import unittest
 import Building_Formulas as bf
 
 
