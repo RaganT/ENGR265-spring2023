@@ -21,8 +21,7 @@ principal_10 = 44000000000
 rate_10 = 3.96
 # this is how many years the investment is held for
 n_10 = 10
-ten_year = (principal_10 * ((1 + (rate_10 / 100)) ** n_10))
-print(ten_year)
+ten_year_final = (principal_10 * ((1 + (rate_10 / 100)) ** n_10))
 
 # Second, I will calculate the 20-year investment
 # this is his initial money he invested
@@ -31,14 +30,9 @@ principal_20 = 44000000000
 rate_20 = 4.32
 # this is how many years the investment is held for
 n_20 = 20
-twenty_year = (principal_20 * ((1 + (rate_20 / 100)) ** n_20))
-print(twenty_year)
+twenty_year_final = (principal_20 * ((1 + (rate_20 / 100)) ** n_20))
 
 # In conclusion, here are the final values that Elon Musk would yield in 10- and 20-year investments
-# final answer for 10-year
-ten_year_final = ten_year
-print(ten_year_final)
 
-# final answer for 20-year
-twenty_year_final = twenty_year
+print(ten_year_final)
 print(twenty_year_final)
