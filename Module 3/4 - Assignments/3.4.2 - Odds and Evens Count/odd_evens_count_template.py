@@ -28,4 +28,8 @@ nums = generate_random_int_list(max_length, upper_bound)
 num_evens = None
 num_odds = None
 
-### YOUR CODE BEGINS HERE ###
+# logic behind this is that I need to take every number and floor divide it by 2
+# if the output is 0 then it is even
+# if the output is not 0 then it is odd
+# store all these values in a new list?
+
