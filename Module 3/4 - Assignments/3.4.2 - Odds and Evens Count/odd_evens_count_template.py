@@ -24,12 +24,25 @@ upper_bound = 1000
 # generate a random lists of integers
 nums = generate_random_int_list(max_length, upper_bound)
 
-# create two variables to hold the final answers
-num_evens = None
-num_odds = None
+
 
 # logic behind this is that I need to take every number and floor divide it by 2
 # if the output is 0 then it is even
 # if the output is not 0 then it is odd
 # store all these values in a new list?
+for n in nums:
+    if (n % 2 == 0):
+        # print("Value is Even")
+        num_evens_new = list()
+        num_evens_new.append(n)
 
+
+    else:
+       # print("Value is Odd")
+        num_odds_new = list()
+        num_odds_new.append(n)
+
+
+# create two variables to hold the final answers
+num_evens = num_evens_new
+num_odds = num_odds_new
