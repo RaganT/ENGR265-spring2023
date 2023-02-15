@@ -35,7 +35,7 @@ list_two_looped = []
 
 for number in range(len(list_two)):
     list_two_looped.append(list_two[number] - 5)
-    # print(list_two_looped)
+    print(list_two_looped)
 
 # As you can see, the "number" variable was used to represent the index of
 # list_two, to be added to the previously empty list_two_looped! Notice how

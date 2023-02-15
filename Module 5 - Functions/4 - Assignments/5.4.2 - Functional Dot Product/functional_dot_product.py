@@ -10,19 +10,21 @@ def generate_random_int_list(list_length, upper_bound):
     # return the generated list
     return randoms
 
-def dot_product(a,b):
+def dot_product(vector_aa, vector_bb):
     """
     A custom function to calculate the dot product of two lists
     :param a: List A of values
     :param b: List B of values
     :return: The dot product as a value between a * b
     """
+    dot_pdt = 0
+    for n in range(0, len(vector_aa)) and range(0, len(vector_bb)):
+        aa = vector_aa[n]
+        bb = vector_bb[n]
+        dpt = (aa * bb)
+        dot_pdt = dot_pdt + dpt
 
-    ### YOUR CODE HERE ###
-
-
-    ### CHANGE THIS RETURN VALUE. IT IS HERE SO THE CODE DOES NOT ERROR
-    return None
+    return dot_pdt
 
 """
 Step 1: Generate two "vectors" of equal length but full of random values
@@ -36,12 +38,12 @@ vector_b = generate_random_int_list(fixed_length, maximum_value)
 """
 Step 2: Call your custom dot_product function
 """
-result = dot_product(vector_a,vector_b)
+result = dot_product(vector_a, vector_b)
 
 """
 Step 3: Check your calculation against numpy
 """
-true_result = np.dot(vector_a,vector_b)
+true_result = np.dot(vector_a, vector_b)
 
 """
 Step 4: See if you're correct....
