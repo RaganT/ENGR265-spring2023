@@ -8,6 +8,7 @@ def my_pi(target_error):
     :param target_error: Desired error for PI estimation
     :return: Approximation of PI to specified error bound
     """
+
     a = 1.0
     b = 1.0 / math.sqrt(2.0)
     t = 1.0 / 4.0
