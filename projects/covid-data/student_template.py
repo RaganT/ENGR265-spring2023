@@ -1,3 +1,4 @@
+# data is a single list
 class CovidRecord:
     """
     A simple class to hold record data from NYT database
@@ -76,16 +77,62 @@ if __name__ == "__main__":
     # for example, we can print out the data for the first point in the US counties file
     point = data[0]
 
-    print("Data: ", point.date, " County: ", point.county, " State: ", point.state,
+    print("Date: ", point.date, " County: ", point.county, " State: ", point.state,
           " FIPS: ", point.fips, " Cases: ", point.cases, " Deaths: ", point.death)
 
     # write code to address the following question:
-    # When was the first positive COVID case in Rockingham County? When was the first in Harrisonburg?
+    # print("The date of the first case in rockingham was", date_rockingham)
+    # odds and evens, min and max, pig latin
 
-    # write code to address the following question:
-    # What day was the greatest number of new daily cases recorded in Harrisonburg? When was the greatest day in Rockingham County?
+# Create new lists for hburg and rock data
+    rockingham = []
+    harrisonburg = []
 
-    # write code to address the following question:
-    # What was the worst seven day period in either the city and county for new COVID cases? This is the 7-day period where the number of new cases was maximal.
+    for value in data:
+        if value.county == 'Rockingham':
+            rockingham.append(value)
+        elif value.county == 'Harrisonburg city':
+            harrisonburg.append(value)
+        else:
+            continue
+# When was the first positive COVID case in Rockingham County?
+    for i in rockingham:
+        if i.cases >= 1:
+            print("The first COVID case recorded in Rockingham was on", i.date)
+        break
 
+    # When was the first in Harrisonburg?
+    for j in harrisonburg:
+        if j.cases >= 1:
+            print("The first COVID case recorded in Harrisonburg was on", j.date)
+        break
 
+    # What day was the greatest number of new daily cases recorded in Harrisonburg? argmax index of max
+    max_cases = 10000   # set this to be my threshold value for finding the max value
+    max_date = None
+    for k in harrisonburg:
+        if k.cases > max_cases:
+            max_cases = k.cases
+            max_date = k.date
+    print("The greatest number of cases in Harrisonburg was on", max_date, "with", max_cases, "cases")
+
+    # When was the greatest day in Rockingham County?
+    for l in rockingham:
+        if l.cases > max_cases:
+            max_cases = l.cases
+            max_date = l.date
+    print("The greatest number of cases in Rockingham was on", max_date, "with", max_cases, "cases")
+
+    # What was the worst seven-day period in either the city and county for new COVID cases?
+    # aaaaaaahhhhhhhhhhhhhhhhhhhhhh
+    local = rockingham + harrisonburg
+    max_sum = 0
+    max_dates = []
+    for m in local:
+        for i in range(len(local)-6):
+            week_sum = [sum(m.cases[i:i+7]) for i in range(0, len(local), 7)]
+            if week_sum > max_sum:
+                max_sum = week_sum
+                max_dates = [sum(m.date[i:i+7]) for i in range(0, len(local), 7)]
+
+    print("The consecutive seven days with the highest number of COVID cases:", max_dates)

@@ -14,24 +14,28 @@ def my_pi(target_error):
     t = 1.0 / 4.0
     p = 1.0
 
-    for i in range():
+    for i in range(1, 10):
         a_i = ((a + b) / 2)
         b_i = math.sqrt(a * b)
         t_i = t - (p * ((a - a_i) ** 2))
         p_i = (2 * p)
 
         pi_iteration = ((a_i + b_i) ** 2) / (4 * t_i)
-        target_error = abs(pi_iteration - math.pi)
+        abs_error = abs(pi_iteration - math.pi)
         a, b, t, p = a_i, b_i, t_i, p_i
+        if abs_error >= target_error:
+            continue
+        else:
+            break
 
-    return target_error
+    return pi_iteration
 
 
 desired_error = 1E-10
 
 approximation = my_pi(desired_error)
 
-print("Solution returned PI=", approximation)
+print("Solution returned Pi=", approximation)
 
 error = abs(math.pi - approximation)
 
